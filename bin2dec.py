@@ -2,7 +2,9 @@ import re
 
 
 def bin2dec(binary_string):
-    if not re.match('^[0-1]+$', binary_string):
+    VALID_BINARY_STRING = r'^[0-1]+$'
+
+    if not re.match(VALID_BINARY_STRING, binary_string):
         raise ValueError('Invalid binary string.')
 
     exponent = len(binary_string) - 1
